@@ -547,6 +547,10 @@ static int getCoinType() {
             48 + 28
         #endif
 
+        #if defined(BLUECOIN)
+            26
+        #endif
+
         #if defined(PAYCON)
             55
         #endif
@@ -996,7 +1000,7 @@ const char *getInterestingAddr() {
 
         "LKvTVnkK2rAkJXfgPdkaDRgvEGvazxWS9o"
 
-    #elif defined(DARKCOIN)
+    #elif defined(DARKCOIN) || defined(BLUECOIN)
 
         "XnuCAYmAiVHE6Xv3D7Xw685wWzqtcfexLh"
 
@@ -1035,7 +1039,7 @@ const char *getInterestingAddr() {
     return addr;
 }
 
-#if defined(DARKCOIN)
+#if defined(DARKCOIN) || defined(BLUECOIN)
 
     #include <h9/h9.h>
 

@@ -348,7 +348,7 @@
         uint8_t       *addrType
     );
 
-    #if defined(DARKCOIN)
+    #if defined(DARKCOIN) || defined(BLUECOIN)
         void h9(
                   uint8_t *h9r,
             const uint8_t *buf,

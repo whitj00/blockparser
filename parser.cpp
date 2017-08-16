@@ -125,6 +125,12 @@ static double getMem() {
     static const uint32_t gExpectedMagic = 0x2d3b3c4b;
 #endif
 
+#if defined BLUECOIN
+static const size_t gHeaderSize = 80;
+    static auto kCoinDirName = ".bluecoin-alt";
+    static const uint32_t gExpectedMagic = 0xaaabf5fe;
+#endif
+
 #if defined JUMBUCKS
     static const size_t gHeaderSize = 80;
     static auto kCoinDirName = ".coinmarketscoin";
@@ -722,7 +728,7 @@ static void getBlockHeader(
 
     hash = allocHash256();
 
-    #if defined(DARKCOIN)
+    #if defined(DARKCOIN) || defined(BLUECOIN)
         h9(hash, p, gHeaderSize);
     #elif defined(PAYCON)
         h13(hash, p, gHeaderSize);
